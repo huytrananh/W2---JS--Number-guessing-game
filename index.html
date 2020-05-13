@@ -7,12 +7,16 @@
 </head>
 <body>
     <h1>Welcome to guessing game !!!</h1>
-    <div id="resultArea">Show result</div>
-    <input type="number" id="guessNumber">
-    <button onclick="guessNumber()">Guess</button>
-    <div id="historyArea">History</div>
-    <div id="timeCount">Here is the time</div>
-
+    <form id="guessGame">
+        <div id="resultArea">Pick up from No.1 to No.100</div>
+        <input type="number" id="guessNumber">
+        <button id="buttonGuess" onclick="guessNumber()">Guess</button>
+        <div id="turnCount">*NOTE: You have only 5 turns to guess.</div>
+        <div id="historyArea">History:</div>
+        <div id="timeCount">Time left:</div>
+        <div id="timeOver">Hurry Up</div>
+        <input type="button" onclick="resetEverything()" value="Reset" >
+    </form>
     <script src="main.js"></script>
 </body>
 </html>
