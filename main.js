@@ -59,6 +59,15 @@ function timeOut() {
 
 function resetEverything(){
     // do something
+    document.getElementById("turnCount").innerHTML = `*NOTE: You have only 5 turns to guess.`
+    document.getElementById("buttonGuess").disabled = false
+    document.getElementById("historyArea").innerHTML = `History: `
+    timeOut()
+    document.getElementById("timeCount").innerHTML = `Time left: `
+    time = 20
+    timeCounting()
+    document.getElementById("timeOver").innerHTML = `HURRY UP `
+    
 }
 
 function disabledButton(){
