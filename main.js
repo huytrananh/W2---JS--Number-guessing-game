@@ -9,11 +9,12 @@ console.log("This is the number that computer chose: ", computerNum)
 function guessNumber(){
     console.log("Fireeeee")
     // 3. grab the value that user typed
-    let userNum = document.getElementById("guessNumber").value
+    let userNum = document.getElementById("guessComputerNumber").value
     let resultMessage = " "
     // 4. compare with the value computer picked with user value
     if(userNum < 0 || userNum > 100){
         disabledButton()
+        timeOut()
         alert("You lose!")
     } else if(computerNum > userNum){              
         resultMessage = "Too low"
@@ -31,12 +32,12 @@ function guessNumber(){
         timeOut()
         disabledButton()
     }
+    
     // keep the history
     document.getElementById("resultArea").innerHTML = `${resultMessage}` // 8. show the result to user
     document.getElementById("historyArea").innerHTML = `History: ${historyNum}` //show the history
 }
 
-// Counting time
 function timeCounting(){
     myTime = setInterval(() => {
         time -= 1
@@ -48,20 +49,18 @@ function timeCounting(){
         }
     }, 1000)// every 1 second, it will add 1 into time variable (computer use millisecond so 1000 is 1 second)
 }
-timeCounting()// fire the timecounting function!!
+timeCounting()
 
-//Timeout 
+
 function timeOut() {
     clearInterval(myTime);
 }
 
-// Reset feature (when click the reset button = > reset everything)
+
 function resetEverything(){
     // do something
-    document.getElementById("guessNumber").reset()
 }
 
-// If user win/lose => the guess button will be disabled(cannot click)
 function disabledButton(){
     // do something
     document.getElementById("buttonGuess").disabled = true
